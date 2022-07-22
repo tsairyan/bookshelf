@@ -1,0 +1,49 @@
+:root {
+    --main-color: #121212;
+    --blue: #2e82ff;
+    --grey: rgba(74,74,74,0.7);
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+li {
+    list-style-type: none;
+}
+
+body, html {
+    height: 100vh;
+}
+.container {
+    display: grid;
+    grid-template-rows: 2fr 11fr;
+    background-color: #FFFFFF;
+    height: 100%;
+}
+
+.title {
+    background-color: var(--grey);
+
+}
+
+
+.main-content {
+    display: grid;
+    grid-template-rows: 6fr 1fr;
+    border: 1px solid red;
+    
+}
+
+
+.bottom {
+    display: flex;
+   
+}
+
+
+
+
+.addBook {
+    width: 2rem;
+    height: 1rem;
+}

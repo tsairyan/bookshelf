@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <script src = "app.js" defer></script>
+
+    <title>Bookshelf</title>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Book</div>
+        
+            
+
+        <div class="main-content">
+            <ul class = "bookList"> </ul>
+            
+
+            <div class="bottom">
+                <form>
+                    <label for="titleInput">Title: </label>
+                    <input type="text" name = "titleInput" required>
+
+                    <label for="authorInput">Author: </label>
+                    <input type="text" name = "authorInput" required>
+
+                    <label for="pagesInput">Pages: </label>
+                    <input type="number" name = "pagesInput" required>
+
+                    <label for="readInput">Read?: </label>
+                    <select name = "readInput" required id ="readInput">
+                        <option value="0" disabled selected></option>
+                        <option value="1">Completed</option>
+                        <option value="2">In-Progress</option>
+                        <option value="3">Not Started</option>
+                    </select>
+                </form>
+            
+                <button class="addBook">Add</button>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
