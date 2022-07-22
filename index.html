@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <script src = "app.js" defer></script>
+
+    <title>Bookshelf</title>
+</head>
+<body>
+    <div class="container">
+        <div class="title">bookshelf.</div>
+        
+            
+
+        <div class="main-content">
+            <ul class = "bookList"> </ul>
+            
+        
+            <div class="bottom">
+                
+                  
+                    <form onsubmit = "return false">
+                        <div class="format">
+                            <div class="one">
+                                <div class="test">add new book</div>
+                            </div>
+                            <div class="two">
+                                <label for="titleInput"> </label>
+                                <input type="text" id = "title" name = "titleInput" placeholder="title.">
+
+                                <label for="authorInput"></label>
+                                <input type="text" id = "author" name = "authorInput" placeholder="author.">
+
+                                <label for="pagesInput"></label>
+                                <input type="number" id = "pages" name = "pagesInput" placeholder="pages.">
+
+                                <label for="readInput"></label>
+                                <select name = "readInput" required id ="readInput" >
+                                    <option value="0" disabled selected hidden >status.</option>
+                                    <option value="1">Completed</option>
+                                    <option value="2">In-Progress</option>
+                                    <option value="3">Not Started</option>
+                                </select>
+                                <button type = "text" class="addBook">add</button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                
+            
+   
+         
+            </div>
+            
+        </div>
+
+    </div>
+</body>
+</html>

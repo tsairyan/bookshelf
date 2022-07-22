@@ -3,9 +3,22 @@
     --blue: #2e82ff;
     --grey: rgba(74,74,74,0.7);
 }
+@font-face {
+    font-family: bolt;
+    src: url(font/Bolt\ Regular.otf);
+}
+@font-face {
+    font-family: gore;
+    src: url(font/Gore\ Regular.otf);
+}
+@font-face {
+    font-family: orkney;
+    src: url(font/Orkney\ Regular.ttf);
+}
 * {
     padding: 0;
     margin: 0;
+    font-family: bolt;
 }
 li {
     list-style-type: none;
@@ -16,13 +29,24 @@ body, html {
 }
 .container {
     display: grid;
-    grid-template-rows: 2fr 11fr;
+    grid-template-rows: 150px auto;
     background-color: #FFFFFF;
     height: 100%;
 }
 
 .title {
-    background-color: var(--grey);
+    background-color: #FFFFFF;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--main-color);
+    font-size: 2.25rem;
+    
+
+    
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
 
 }
 
@@ -30,20 +54,101 @@ body, html {
 .main-content {
     display: grid;
     grid-template-rows: 6fr 1fr;
-    border: 1px solid red;
+    
     
 }
+.bookList {
 
+    padding: 2rem;
+    display: flex;
+    gap: 3.2rem;
+    grid-row: 1 / 2;
+    flex-wrap: wrap;  
+
+        
+      
+}
 
 .bottom {
     display: flex;
-   
+    grid-row: 2 / 3;
+    justify-content: center;
+    align-items: end;
+    gap: 4rem;
+    background-color: #121212;
+    align-items: center;
+}
+.format {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 
 
 
 .addBook {
-    width: 2rem;
-    height: 1rem;
+    width: 3rem;
+    height: 2rem;
+    background-color: #121212;
+    border: 1px solid #121212;
+    border-radius: 10px;
+    border-bottom: 3.5px solid #006fff;
+    color: white;
+    font-weight: 900;
 }
+.addBook:hover {
+    background-color: #2c2c2c;
+    cursor: pointer;
+}
+
+
+input[type ="number"] {
+  
+    width: 3.25rem;
+    -moz-appearance: textfield;
+}
+
+::placeholder {
+    color: var(--grey)
+}
+.one {
+    color: white;
+    margin-left: 0.5rem;
+    border-bottom: 1px solid white;
+    padding-bottom: 0.1rem;
+    width: 11ch;
+}
+#readInput {
+    background-color: #121212;
+    border: 1px solid #121212;
+    border-radius: 5px;
+    color: var(--grey);
+    border-bottom: 2px solid #006fff;
+
+    padding: 0.5rem;
+    height: 3rem;
+}
+input {
+
+    padding: 0.5rem;
+ 
+    height: 1.75rem;
+
+    border: 0px;
+    border-bottom: 2px solid #006fff;
+    
+    
+    font-weight: 900;
+    border-radius: 7.5px;
+   
+    background-color: #121212e5;
+    color: white;
+}
+
+
+input:focus, textarea:focus {
+    outline: none;
+
+}
+
