@@ -1,11 +1,19 @@
 const newBook = document.querySelector(".addBook");
 const dropdown = document.getElementById("readInput");
 dropdown.addEventListener("change", function () {
-    
-dropdown.style.color = "white", false});
+    dropdown.style.color = "white", false
+    });
+const inputs = document.querySelectorAll("input");
+const readVar = document.getElementById("readInput");
 newBook.addEventListener('click', function() {
-    
-    addBookToLibrary();
+
+    const title = inputs[0].value;
+    const author = inputs[1].value;
+    const pages = inputs[2].value;
+
+    const read = readVar.options[readVar.selectedIndex].text;
+    let b = new book(title, author, pages, read);
+    b.addBookToLibrary();
     dropdown.style.color = "rgba(74,74,74,0.7)";
 });
 const text = document.querySelector(".text");
@@ -13,40 +21,41 @@ const bookList = document.querySelector(".bookList");
 
 let myLibrary = [];
 
-function book (title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+class book {
+    
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
+    
+    getInfo() {
+        return 
+    }
+    get _title() {return this.title;}
+    get _author() {return this.author;}
+    get _pages() {return this.pages;}
+    get _read() {return this.read;}
+    addBookToLibrary() {   
 
-    this.getInfo = function() {
-        return "title: " + title + "\r\n" + "author: " + author + "\r\n" + "page count: "
-         + pages + "\r\n";  
+
+        myLibrary.push(this);
+    
+        inputs.forEach(element => element.value = "");
+        readVar.selectedIndex = 0;
+        display();
     }
 }
 
-function addBookToLibrary() {   
-    const inputs = document.querySelectorAll("input");
-    const title = inputs[0].value;
-    const author = inputs[1].value;
-    const pages = inputs[2].value;
-
-    const readVar = document.getElementById("readInput");
-    const read = readVar.options[readVar.selectedIndex].text;
-
-    myLibrary.push(new book(title, author, pages, read));
-
-    inputs.forEach(element => element.value = "");
-    readVar.selectedIndex = 0;
-    display();
-}
 
 let counter = 0;
 function display() {
     const currStatus = myLibrary[counter].read;
     //Adding to display
     const li = document.createElement("li");
-    li.textContent = myLibrary[counter].getInfo();
+    li.textContent = "title: " + myLibrary[counter]._title + "\r\n" + "author: " + myLibrary[counter]._author + "\r\n" + "page count: "
+    + myLibrary[counter]._pages + "\r\n";  
     li.style.whiteSpace = "pre-line";
 
 
