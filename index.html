@@ -20,20 +20,20 @@
             <div class="bottom">
                 
                   
-                    <form onsubmit = "return false">
+                    <form onsubmit = "return false" novalidate>
                         <div class="format">
                             <div class="one">
                                 <div class="test">add new book</div>
                             </div>
                             <div class="two">
                                 <label for="titleInput"> </label>
-                                <input type="text" id = "title" name = "titleInput" placeholder="title.">
+                                <input type="text" id = "title" name = "titleInput" placeholder="title." required>
 
                                 <label for="authorInput"></label>
-                                <input type="text" id = "author" name = "authorInput" placeholder="author.">
+                                <input type="text" id = "author" name = "authorInput" placeholder="author." required>
 
                                 <label for="pagesInput"></label>
-                                <input type="number" id = "pages" name = "pagesInput" placeholder="pages.">
+                                <input type="number" id = "pages" name = "pagesInput" placeholder="pages." required>
 
                                 <label for="readInput"></label>
                                 <select name = "readInput" required id ="readInput" >
@@ -44,6 +44,8 @@
                                 </select>
                                 <button type = "text" class="addBook">add</button>
                             </div>
+                            <div class="test2"></div>
+
                         </div>
                     </form>
                     

@@ -2,20 +2,93 @@ const newBook = document.querySelector(".addBook");
 const dropdown = document.getElementById("readInput");
 dropdown.addEventListener("change", function () {
     dropdown.style.color = "white", false
+    dropdown.style.borderBottom = "2px solid #006fff";
+
+
     });
 const inputs = document.querySelectorAll("input");
+const errorMsg = document.querySelector(".test2");
+
+const titleInput = document.querySelector("#title");
+const pageInput = document.querySelector("#pages");
+const authorInput = document.querySelector("#author");
+
 const readVar = document.getElementById("readInput");
-newBook.addEventListener('click', function() {
 
-    const title = inputs[0].value;
-    const author = inputs[1].value;
-    const pages = inputs[2].value;
+function showError() {
+    if (titleInput.validity.valueMissing) {
+        errorMsg.textContent = "Please complete all fields.";
+        titleInput.style.borderBottom = "2px solid rgb(232, 39, 39)";
+        
 
-    const read = readVar.options[readVar.selectedIndex].text;
-    let b = new book(title, author, pages, read);
-    b.addBookToLibrary();
-    dropdown.style.color = "rgba(74,74,74,0.7)";
+        // border-bottom: 2px solid #006fff;
+
+    }
+    if (authorInput.validity.valueMissing) {
+        errorMsg.textContent = "Please complete all fields.";
+        authorInput.style.borderBottom = "2px solid rgb(232, 39, 39)";
+        
+
+        // border-bottom: 2px solid #006fff;
+
+    }
+    if (pageInput.validity.valueMissing) {
+        pageInput.style.borderBottom = "2px solid rgb(232, 39, 39)";
+        
+
+        // border-bottom: 2px solid #006fff;
+
+    } 
+    if (readVar.options[readVar.selectedIndex].text === 'status.') {
+        errorMsg.textContent = "Please complete all fields.";
+
+        readVar.style.borderBottom = "2px solid rgb(232, 39, 39)";
+
+    }
+    
+    
+}
+
+titleInput.addEventListener('input', (event) => {
+    if (titleInput.validity.valid) {
+
+        titleInput.style.borderBottom = "2px solid #006fff";
+    }
 });
+authorInput.addEventListener('input', (event) => {
+    if (author.validity.valid) {
+
+        authorInput.style.borderBottom = "2px solid #006fff";
+    }
+});
+pageInput.addEventListener('input', (event) => {
+    if (pageInput.validity.valid || pageInput.validity.typeMismatch) {
+        pageInput.style.borderBottom = "2px solid #006fff";
+    }
+});
+newBook.addEventListener('click', (event) => {
+
+        if (!titleInput.validity.valid || !authorInput.validity.valid || !pageInput.validity.valid || readVar.options[readVar.selectedIndex].text === 'status.') {
+        showError();
+
+
+    } else {
+        errorMsg.textContent = '';
+
+        const title = inputs[0].value;
+        const author = inputs[1].value;
+        const pages = inputs[2].value;
+
+        const read = readVar.options[readVar.selectedIndex].text;
+        let b = new book(title, author, pages, read);
+        b.addBookToLibrary();
+        dropdown.style.color = "rgba(74,74,74,0.7)";
+    }
+
+
+
+});
+
 const text = document.querySelector(".text");
 const bookList = document.querySelector(".bookList");
 

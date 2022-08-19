@@ -152,3 +152,12 @@ input:focus, textarea:focus {
 
 }
 
+.test2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(232, 39, 39);
+    padding-top: 0.2rem;
+    font-size: 0.75rem;
+
+}
