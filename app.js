@@ -1,3 +1,5 @@
+
+
 const newBook = document.querySelector(".addBook");
 const dropdown = document.getElementById("readInput");
 dropdown.addEventListener("change", function () {
@@ -81,6 +83,7 @@ newBook.addEventListener('click', (event) => {
 
         const read = readVar.options[readVar.selectedIndex].text;
         let b = new book(title, author, pages, read);
+        
         b.addBookToLibrary();
         dropdown.style.color = "rgba(74,74,74,0.7)";
     }
@@ -234,6 +237,6 @@ function display() {
     });
 }
 
-myLibrary.push(new book("Multivariable Calculus!", "ANTON BIVENS", 999, "Completed"));
-display();
+
+
 
